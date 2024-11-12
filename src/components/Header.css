@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    background-color: white;
+    background-color:#FFFFFF;
     padding: 10px 100px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .header-cart {
-    position: relative; /* Add this to contain the cart-count within this div */
+    position: relative; 
     margin-left: 50px;
 }
 
@@ -45,8 +45,8 @@
 
 .cart-count {
     position: absolute;
-    top: 5px; /* Adjust positioning */
-    right: 5px; /* Adjust positioning */
+    top: 15px; 
+    right: 22px; 
     background-color: #FFFFFF;
     color: #35B8BE;
     font-size: 12px;

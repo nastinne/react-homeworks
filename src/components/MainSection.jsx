@@ -1,6 +1,5 @@
 import React, { Component, createRef } from 'react';
 import './MainSection.css';
-import { getImgUrl } from '../utils/getImgUrl';
 
 class MainSection extends Component {
   constructor(props) {
@@ -35,10 +34,9 @@ class MainSection extends Component {
   };
 
   handleAddToCart = (itemId) => {
-    // Ensure the ref exists and has a current value
     const ref = this.quantityRefs[itemId];
     if (ref && ref.current) {
-      const quantity = Number(ref.current.value || 1); // default to 1 if undefined
+      const quantity = Number(ref.current.value || 1);
       if (quantity > 0) {
         this.props.incrementItemCount(quantity);
       }
@@ -54,9 +52,22 @@ class MainSection extends Component {
     return (
       <main className="main-section">
         <h1 className="main-title">Browse our menu</h1>
+        <p className="main-description">
+          Use our menu to place an order online, or{' '}
+          <span style={{ position: 'relative' }}>
+            <span className="phone" title="Phone Number: +1 (555) 123-4567">phone</span>
+          </span>{' '}
+          our store to place a pickup order. Fast and fresh food.
+        </p>
+
+        <div className="menu-buttons">
+          <button className="menu-button" disabled>Dinner</button>
+          <button className="menu-button" disabled>Breakfast</button>
+          <button className="menu-button" disabled>Dessert</button>
+        </div>
+
         <div className="menu">
           {itemsToDisplay.map((item) => {
-            // Ensure each item has a ref created only once
             if (!this.quantityRefs[item.id]) {
               this.quantityRefs[item.id] = createRef();
             }

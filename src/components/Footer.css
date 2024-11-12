@@ -62,8 +62,7 @@
     color:  #546285;
     cursor: pointer;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
-.footer-column-item:hover {
-    color: #fff;
-}
+
