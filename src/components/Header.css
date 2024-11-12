@@ -34,10 +34,22 @@
 }
 
 .header-cart {
+    position: relative; /* Add this to contain the cart-count within this div */
     margin-left: 50px;
 }
 
 .cart-icon {
     width: 70px; 
     height: 70px; 
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px; /* Adjust positioning */
+    right: 5px; /* Adjust positioning */
+    background-color: #FFFFFF;
+    color: #35B8BE;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 50%;
 }
