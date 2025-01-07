@@ -1,0 +1,75 @@
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px 90px;
+    padding-top: 200px;
+    background-color: #f9fcfc;
+  }
+  
+  .main-section .content {
+    max-width: 500px;
+  }
+  
+  .main-section h1 {
+    font-size: 40px;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .main-section .highlight {
+    color: #35b8be;
+  }
+  
+  .main-section p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #546285;
+  }
+  
+  .main-section .rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .main-section .rating .stars {
+    color: #35b8be;
+    margin-right: 8px;
+  }
+  
+  .main-section .rating span {
+    font-size: 14px;
+    color: #546285;
+  }
+  
+  .main-section .image {
+    position: relative;
+  }
+  
+  .main-section .image img {
+    max-width: 400px;
+    border-radius: 8px;
+  }
+  
+  .main-section .image .circle {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: #35b8be;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .main-section button {
+    background: #35b8be;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: not-allowed; /* Button disabled */
+    opacity: 0.7;
+  }
+  
