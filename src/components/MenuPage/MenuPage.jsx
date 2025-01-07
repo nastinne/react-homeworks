@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './MainSection.css';
+import './MenuPage.css';
 
-const MainSection = ({ incrementItemCount }) => {
+const MenuPage = ({ incrementItemCount }) => {
   const [menuItems, setMenuItems] = useState([]);
   const [visibleItems, setVisibleItems] = useState(6);
   const [allItemsLoaded, setAllItemsLoaded] = useState(false);
@@ -36,7 +36,7 @@ const MainSection = ({ incrementItemCount }) => {
   const itemsToDisplay = filteredItems.slice(0, visibleItems);
 
   return (
-    <main className="main-section">
+    <main className="main-section-menu">
       <h1 className="main-title">Browse our menu</h1>
       <p className="main-description">
         Use our menu to place an order online, or{' '}
@@ -114,4 +114,4 @@ const MainSection = ({ incrementItemCount }) => {
   );
 };
 
-export default MainSection;
+export default MenuPage;

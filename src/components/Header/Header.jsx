@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { getImgUrl } from '../utils/getImgUrl';
+import { getImgUrl } from '../../utils/getImgUrl';
 
 const Header = ({ itemCount }) => {
   return (

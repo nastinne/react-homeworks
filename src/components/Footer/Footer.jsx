@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { getImgUrl } from '../utils/getImgUrl';
+import { getImgUrl } from '../../utils/getImgUrl';
 
 const Footer = () => {
   const footerData = {
