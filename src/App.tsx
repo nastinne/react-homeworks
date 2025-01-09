@@ -4,8 +4,17 @@ import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import MenuPage from './components/MenuPage/MenuPage';
 
-const App = () => {
-  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+const App: React.FC = () => {
+  // Safely parse localStorage value
+  const loggedInUser = (() => {
+    try {
+      const storedUser = localStorage.getItem('loggedInUser');
+      return storedUser ? JSON.parse(storedUser) : null;
+    } catch (error) {
+      console.error('Error parsing loggedInUser from localStorage:', error);
+      return null;
+    }
+  })();
 
   return (
     <Router>
@@ -19,9 +28,14 @@ const App = () => {
           path="/menu"
           element={loggedInUser ? <MenuPage /> : <Navigate to="/login" />}
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
+
+
+
+

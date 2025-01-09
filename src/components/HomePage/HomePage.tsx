@@ -2,14 +2,14 @@ import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import useFetch from '../../utils/useFetch';
-import './HomePage.css'; 
+import './HomePage.css';
 
-const HomePage = () => {
-  useFetch('/api/example', { method: 'GET' }); 
+const HomePage: React.FC = () => {
+  useFetch('/api/example', { method: 'GET' });
 
   return (
     <>
-      <Header />
+      <Header itemCount={0} /> {/* Pass itemCount if required by Header */}
       <section className="main-section">
         <div className="content">
           <h1>
@@ -25,7 +25,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="image">
-          <img src="./src/assets/images/food.svg" alt="Food" />
+          <img src="./src/assets/images/food.svg" alt="Delicious food" />
         </div>
       </section>
       <Footer />

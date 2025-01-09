@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './LoginPage.css';
 
-const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+interface User {
+  username: string;
+  password: string;
+}
 
-  const handleLogin = (e) => {
+interface HeaderProps {
+  itemCount: number;
+}
+
+const LoginPage: React.FC = () => {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
+
+  const [itemCount] = useState<number>(0); 
+
+
+  const handleLogin = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
     const user = users.find(
       (u) => u.username === username && u.password === password
     );
@@ -25,9 +38,16 @@ const LoginPage = () => {
     }
   };
 
+  
+  const clearForm = (): void => {
+    setUsername('');
+    setPassword('');
+    setError('');
+  };
+
   return (
     <>
-      <Header />
+      <Header itemCount={itemCount} /> 
       <div className="login-page-wrapper">
         <div className="login-container">
           <h2>Log in</h2>
@@ -56,11 +76,7 @@ const LoginPage = () => {
               <button
                 type="button"
                 className="cancel"
-                onClick={() => {
-                  setUsername('');
-                  setPassword('');
-                  setError('');
-                }}
+                onClick={clearForm} 
               >
                 Cancel
               </button>
@@ -74,3 +90,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

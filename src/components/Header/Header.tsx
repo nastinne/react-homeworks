@@ -2,7 +2,11 @@ import React from 'react';
 import './Header.css';
 import { getImgUrl } from '../../utils/getImgUrl';
 
-const Header = ({ itemCount }) => {
+interface HeaderProps {
+  itemCount: number;
+}
+
+const Header: React.FC<HeaderProps> = ({ itemCount }) => {
   return (
     <header className="header">
       <div className="header-logo">
@@ -31,5 +35,6 @@ const Header = ({ itemCount }) => {
 };
 
 export default Header;
+
 
 
